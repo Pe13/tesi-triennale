@@ -1,13 +1,17 @@
-% Preamble
 \documentclass[12pt,a4paper]{report}
 \usepackage[italian]{babel}
 \usepackage{newlfont}
 \usepackage{color}
 \textwidth=450pt\oddsidemargin=0pt
 
+\makeindex
 
-% Packages
+% Symbols packages
 \usepackage{amsmath}
+
+% Utility packages
+\usepackage{xspace}
+
 
 \usepackage{subfiles}
 
@@ -15,6 +19,10 @@
 \begin{document}
 
 \subfile{frontespizio-fisica.tex}
+
+\subfile{abstract.tex}
+
+\subfile{neutrino/neutrino.tex}
 
 \bibliography{main}
 \bibliographystyle{plain}
