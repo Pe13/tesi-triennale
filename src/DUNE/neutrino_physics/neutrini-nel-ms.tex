@@ -23,9 +23,12 @@
   I neutrini inoltre, al contrario degli altri leptoni, sono caratterizzati
   da massa e carica elettrica nulle, possono quindi interagire solo tramite
   interazione debole.\\
-  Le interazioni deboli dei neutrini possono essere classificate in base alla
-  natura delle particelle con le quali interagiscono, di seguito sono esposte le
-  interazioni con i costituenti della materia.
+  Le interazioni deboli possono essere mediate dai bosoni elettricamente carichi
+  $\PWpm$ o da quello neutro $\PZ$ e si parla rispettivamente di corrente carica
+  (CC) o corrente neutra (NC).
+  Le interazioni deboli dei neutrini in particolare possono essere classificate
+  in base alla natura delle particelle con le quali interagiscono, di seguito
+  sono esposte le interazioni con i costituenti della materia.
 
   \paragraph{Scattering neutrino elettrone}
     Lo scattering neutrino elettrone riguarda solo leptoni liberi, è quindi
@@ -34,32 +37,67 @@
     \begin{equation*}
       \Pnulepton + \Pelectron \rightarrow \Pnue + \Pleptonminus
     \end{equation*}
-    e in tal caso sono dette quasi elastiche, altrimenti si definiscono
+    in tal caso sono dette quasi elastiche e richiedono che il neutrino abbia
+    un'energia sufficiente (nel sistema di riferimento dell'elettrone) per
+    creare il leptone carico corrispondente; queste reazioni sono mediate
+    unicamente da correnti cariche (CC).
+    Se le particelle coinvolte non cambiano si parla invece di interazioni
     elastiche e assumo la forma
     \begin{align*}
-      \Pnulepton + \Pelectron \rightarrow \Pnulepton + \Pelectron \\
+      \Pnulepton + \Pelectron \rightarrow \Pnulepton + \Pelectron &&
       \APnulepton + \Pelectron \rightarrow \APnulepton + \Pelectron
     \end{align*}
-    Gli scattering elastici, lasciando invariate le particelle interagenti, non
-    richiedono un'energia minima per avvenire, al contrario gli scattering quasi
-    elastici richiedono che il neutrino abbia un'energia sufficiente (nel
-    sistema di riferimento dell'elettrone) per creare il leptone carico
-    corrispondente.
+    Gli scattering elastici possono essere mediati sia da correnti carice (CC)
+    che da correnti neutre (NC), inoltre, lasciando invariate le particelle
+    interagenti, non richiedono un'energia minima per avvenire.
 
   \paragraph{Scattering neutrino nucleone}
     La struttura a quark dei nucleoni rende impossibile calcolare la sezione
     d'urto di queste interazioni tramite le regole di Feynman e richiede
-    tecniche più avanzate, non trattate in questo elaborato.
+    tecniche più avanzate, non trattate in questo elaborato.\\
     Queste interazioni si dividono in tre gruppi: elastici, quasi elastici e
-    anelastici.
-    I primi due casi sono analoghi agli omonimi già visti per gli scattering
-    neutrino elettrone; si ricorda però che al fine di conservare la carica
-    elettrica i neutrini possono interagire quasi elasticamente solo con
+    anelastici; i primi due casi sono analoghi agli omonimi già visti per gli
+    scattering neutrino elettrone; si ricorda però che al fine di conservare la
+    carica elettrica i neutrini possono interagire quasi elasticamente solo con
     neutroni mentre gli antineutrini solo con protoni
     \begin{align*}
-      \Pnulepton + \Pneutron \rightarrow \Pleptonminus + \Pproton \\
+      \Pnulepton + \Pneutron \rightarrow \Pleptonminus + \Pproton &&
       \APnulepton + \Pproton \rightarrow \Pleptonplus + \Pneutron
     \end{align*}
+    I processi anelastici sono a loro volta divisi in produzione di risonanza e
+    scattering profondamente anelastico; la produzione di risonanza è il
+    fenomeno dominante a basse energie
+    $\left(0.5\: \text{GeV} < E_\nu < 10\: \text{GeV} \right)$
+    e consiste tipicamente, oltre alla creazione del leptone
+    carico corrispondente al neutrino, nell'eccitazione del nucleone in una
+    risonanza che poi decade in un nucleone e in un pione, tuttavia in base alla
+    risonanza il numero e la natura dei prodotti finali della reazione possono
+    variare andando a comprendere anche alcuni pioni, kaoni e fotoni.
+    Il processo puù essere schematizzato come:
+    \begin{align*}
+      \Pnum + N &\rightarrow \Pmuon + N^* \\
+      N^* &\rightarrow N' + \Ppi
+    \end{align*}
+    Nel caso dello scattering profondamente anelastico il neutrino, essendo
+    più energetico $\left( E_{\nu} > 10 \: \text{GeV} \right)$, non interagisce
+    con l'intero nucleone ma con i quark che lo costituiscono.
+    Chiamando $X$ un insieme arbitrario di adroni queste interazioni possono
+    essere schematizzate come:
+    \begin{align*}
+      \Pnulepton + N \rightarrow \Pleptonminus + X &&
+      \APnulepton + N \rightarrow \Pleptonplus + X \\
+      \Pnulepton + N \rightarrow \Pnulepton + X &&
+      \APnulepton + N \rightarrow \APnulepton + X
+    \end{align*}
+    \begin{figure}[ht]
+      \includegraphics[width=0.47\textwidth]{cc-total-xsec-nu-eps-converted-to}
+      \includegraphics[width=0.47\textwidth]
+      {cc-total-xsec-nubar-eps-converted-to}
+      \caption{Sezione d'urto di neutrini (sinistra) e antineutrini (destra)}
+      \label{fig:neutrino-xsecs}
+    \end{figure}
+    Le sezioni d'urto delle interazioni finora descritte sono riportare in
+    figura~\ref{fig:neutrino-xsecs}
 
 
 \end{document}

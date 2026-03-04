@@ -1,10 +1,4 @@
 \documentclass[12pt,a4paper]{report}
-\usepackage[italian]{babel}
-\usepackage{newlfont}
-\usepackage{color}
-\textwidth=450pt\oddsidemargin=0pt
-
-\makeindex
 
 % Symbols packages
 \usepackage{amsmath}
@@ -12,16 +6,23 @@
 \usepackage{hepnames}
 
 % Utility packages
-
+\usepackage[italian]{babel}
+\usepackage{newlfont}
+\usepackage{color}
+\usepackage{graphicx}
 
 \usepackage{subfiles}
+
+% Setup
+\textwidth=450pt\oddsidemargin=0pt
+\graphicspath{{../img/}}
 
 % Document
 \begin{document}
 
 \subfile{frontespizio-fisica.tex}
-
 \subfile{abstract.tex}
+\tableofcontents
 
 \subfile{DUNE/DUNE.tex}
 
