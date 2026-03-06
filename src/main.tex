@@ -4,13 +4,16 @@
 \usepackage{amsmath}
 \usepackage[italic]{hepparticles}
 \usepackage{hepnames}
+\usepackage{braket}
 
 % Utility packages
 \usepackage[italian]{babel}
 \usepackage{newlfont}
+\usepackage{bm}
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{IEEEtrantools}
 
 \usepackage{subfiles}
 
@@ -20,6 +23,7 @@
 
 % Document
 \begin{document}
+\bstctlcite{IEEEexample:BSTcontrol} % Deve stare prima di qualsiasi citazione
 
 \subfile{frontespizio-fisica.tex}
 \subfile{abstract.tex}

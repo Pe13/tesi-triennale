@@ -1,4 +1,5 @@
 \documentclass[../../main.tex]{subfiles}
+\usepackage{amssymb}
 
 \begin{document}
 
@@ -11,9 +12,86 @@
   osservabili cosmologici; il Modello Standard necessita quindi di essere
   esteso.\\
   Il problema della massa dei neutrini si articola in diversi sotto problemi:
-  \begin{itemize}
-    \item Ordinamento degli autostati di massa
-    \item Neutrini sterili vs neutrini di Majorana
-  \end{itemize}
+
+  \paragraph{Neutrini di Dirac vs neutrini di Majorana \cite[Capitolo 6]
+  {10.1093/acprof:oso/9780198508717.001.0001}}
+    L'attuale descrizione dei leptoni implica direttamente l'annullarsi della
+    massa dei neutrini tramite il meccanismo di Higgs.
+    Le due teorie più accreditate che provano a risolvere questo problema sono
+    l'estensione minimale del Modello standard (\textit{minimally
+extended Standard Model}) e il Neutrino di Majorana.
+    Senza soffermarsi sui dettagli matematici che sono ben oltre gli obbiettivi
+    di questa tesi, entrambe le teorie introducono altri tre neutrini (uno per
+    generazione) non soggetti alla forza debole (capaci quindi di interagire
+    solo gravitazionalmente), in questo modo il meccanismo di Higgs attribuisce
+    ai neutrini una massa non nulla.
+    La differenza sta in come questi ``nuovi'' neutrini sono legati a quelli già
+    noti.
+    Esperimenti come CUORE~\cite{ADAMS2022103902} mirano a discriminare queste
+    due possibilità.
+
+  \paragraph{Ordinamento degli autostati}
+    Gli autostati di massa previsti dalle due teorie appena esposte
+    \begin{equation*}
+      \bm{n}_L =
+      \begin{pmatrix}
+        \nu_{1L} \\ \nu_{2L} \\ \nu_{3L}
+      \end{pmatrix}
+    \end{equation*}
+    sono legati a quelli di sapore tramite la matrice
+    Pontecorvo-Maki-Nakagawa-Sakata $U^{PMNS}$ dalla relazione
+    \begin{equation}
+      \bm{\nu}_L = U^{PMNS} \bm{n}_L =
+      \begin{pmatrix}
+        \Pnue_{L} \\ \Pnum_{L} \\ \Pnut_{L}
+      \end{pmatrix}
+      \label{eq:massa-sapore}
+    \end{equation}
+    Gli autostati di massa sono autostati dell'hamiltoniana
+    \begin{equation*}
+      \mathcal{H} \ket{\nu_k} = E_k \ket{\nu_k}
+    \end{equation*}
+    ed evolvono quindi come onde piane
+    \begin{equation}
+      \ket{\nu_k (t)} = e^{-i E_k t} \ket{\nu_k}
+      \label{eq:ev-temp-autoket-massa}
+    \end{equation}
+    Usando due volte l'eq.~\eqref{eq:massa-sapore} nella
+    ~\eqref{eq:ev-temp-autoket-massa} possiamo scrivere l'evoluzione temporale
+    di un autostato di sapore in funzione degli autostati di sapore stessi
+    \begin{equation*}
+      \ket{\nu_\alpha} = U^{*}_{\alpha k} e^{-i E_k t} U_{\beta k}
+      \ket{\nu_\beta}
+    \end{equation*}
+    e calcolare la probabilità di transizione tra due sapori come
+    \begin{equation*}
+      P_{\nu_\alpha \rightarrow \nu_\beta} (t) =
+      \left| \braket{\nu_\beta | \nu_\alpha (t)} \right|^2
+    \end{equation*}
+    Nel limite ultrarelativistico ($v \approx c$), sempre valido visto l'ordine
+    di grandezza delle masse dei neutrini,
+    $P_{\nu_\alpha \rightarrow \nu_\beta}$ dipende dai termini
+    $\Delta m^2_{kj} = m^2_k - m^2_j.$
+    Gli esperimenti hanno misurato il segno di $m^2_{12}$, chiamata differenza
+    di massa solare, stabilendo che $\nu_1 < \nu_2$, per quanto riguarda
+    $m^2_{13}$ e $m^2_{23}$ si sa solo che hanno lo stesso ordine di grandezza;
+    la situazione è quindi
+    \begin{equation*}
+      m^2_{12} \ll \left| m^2_{13} \right| \simeq \left| m^2_{23} \right|
+    \end{equation*}
+    I due scenari possibili sono quindi la ``gerarchia normale''
+    $m_1 < m_2 < m_3$ o la ``gerarchia inversa'' $m_3 < m_1 < m_2.$
+
+  \paragraph{Violazione della simmetria CP}
+    La simmetria CP consiste nello scambiare una particella con la usa
+    antiparticella: $\Pnu \rightarrow \APnu$; se il sistema non cambia a seguito
+    di questa trasformazione allora si dice che rispetta la simmetria CP\@.
+    Nel caso dei neutrini questa violazione corrisponderebbe con la condizione
+    \begin{equation*}
+      P_{\nu_\alpha \rightarrow \nu_\beta} \neq
+      P_{\bar{\nu}_\alpha \rightarrow \bar{\nu}_\beta}
+    \end{equation*}
+    Al momento ci sono diversi esperimenti in corso che provano a rilevare
+    questa asimmetria.
 
 \end{document}
