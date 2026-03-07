@@ -1,5 +1,4 @@
 \documentclass[../../main.tex]{subfiles}
-\usepackage{amssymb}
 
 \begin{document}
 
@@ -86,12 +85,51 @@ extended Standard Model}) e il Neutrino di Majorana.
     La simmetria CP consiste nello scambiare una particella con la usa
     antiparticella: $\Pnu \rightarrow \APnu$; se il sistema non cambia a seguito
     di questa trasformazione allora si dice che rispetta la simmetria CP\@.
-    Nel caso dei neutrini questa violazione corrisponderebbe con la condizione
+    Nel caso dei neutrini una sua violazione corrisponderebbe alle condizioni
+    equivalenti
     \begin{equation*}
       P_{\nu_\alpha \rightarrow \nu_\beta} \neq
-      P_{\bar{\nu}_\alpha \rightarrow \bar{\nu}_\beta}
+      P_{\bar{\nu}_\alpha \rightarrow \bar{\nu}_\beta} \iff
+      U \neq U^*
     \end{equation*}
-    Al momento ci sono diversi esperimenti in corso che provano a rilevare
-    questa asimmetria.
+    In particolare la matrice PMNS può essere fattorizzata in 3 matrici, una
+    per ogni coppia di
+    autostati, adottando la convenzione $c_{ij} = \cos(\theta_{ij})$ e
+    $s_{ij} = \sin(\theta_{ij})$ dove $\theta_{ij}$ sono gli angoli di
+    mixing tra gli austostati di massa $i$ e $j$, la sua espressione diventa
+    \begin{multline}
+      U^{PMNS} =
+      \begin{pmatrix}
+        U_{\Pe 1} & U_{\Pe 2} & U_{\Pe 3} \\
+        U_{\Pmu 1} & U_{\Pmu 2} & U_{\Pmu 3} \\
+        U_{\Ptau 1} & U_{\Ptau 2} & U_{\Ptau 3}
+      \end{pmatrix} = \\ =
+      \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & c_{23} & s_{23} \\
+        0 & -s_{23} & c_{23}
+      \end{pmatrix}
+      \begin{pmatrix}
+        c_{13} & 0 & s_{13} e^{-\delta_{CP}} \\
+        0 & 1 & 0 \\
+        -s_{13} e^{\delta_{CP}} & 0 & c_{13}
+      \end{pmatrix}
+      \begin{pmatrix}
+        c_{12} & s_{12} & 0 \\
+        -s_{12} & c_{12} & 0 \\
+        0 & 0 & 1
+      \end{pmatrix}
+      \label{eq:pmns-decomposta}
+    \end{multline}
+    Il termine $\delta_{CP} \in \left[ 0, \pi \right] $ prende il nome di
+    fase di Dirac ed è strettamente legato alla violazione della simmetria CP,
+    infatti dall'eq~\eqref{eq:pmns-decomposta} è facile vedere che
+    \begin{equation*}
+      U \neq U^* \iff \delta_{CP} \neq 0, \pi
+    \end{equation*}
+    Al momento le misure di questo parametro non sono sufficientemente
+    precise per decretare se questa violazione avvenga o
+    meno~\cite{Esteban_2020}, ci sono diversi esperimenti in corso che
+    provano a rilevare questa asimmetria.
 
 \end{document}
