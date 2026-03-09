@@ -71,7 +71,48 @@
     dettagli sul rilevatore e sui suoi obbiettivi scientifici.
 
   \subsubsection*{ND-LAr}
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=.5\textwidth]{DUNE/dune-project/nd-lar}
+      \caption{
+        Vista schematica dei componenti esterni di ND-LAr,
+        inclusi il criostato e il sistema per il movimento DUNE-PRISM\@.
+        Sono indicati l’asse e la direzione del fascio. \cite{Battisti:2022rZ}
+      }
+      \label{fig:nd-lar}
+    \end{figure}
+    ND-LAr è una camera a proiezione temporale ad argon liquido (LArTPC).
+    Il suo design consiste in una TPC composta da 35 moduli otticamente isolati
+    ospitati in un bagno comune di argon liquido purificato all'interno di un
+    criostato.
+    Ogni modulo è caratterizzato da un catodo ad alta tensione, una
+    gabbia di campo per ridurre al minimo la quantità di materiale inattivo tra
+    i moduli, un sistema di rilevazione della luce e una lettura della carica
+    basata su pixel.
+    Ogni regione di deriva ha una lunghezza massima di 50 cm.
 
+    La suddivisione del volume e l'isolamento ottico riducono la sovrapposizione
+    degli eventi, mentre la lettura a pixel consente una ricostruzione completa
+    dell'immagine tridimensionale con un'accuratezza spaziale di
+    circa 16 mm e una risoluzione temporale che si attesta sui 200 ns.
+
+    La luce di scintillazione, rilevata in tandem con la ionizzazione prodotta
+    dalle particelle cariche, fornisce una misura complementare della posizione
+    e dell'energia del segnale; sebbene la granularità sia molto inferiore, essa
+    offre una risoluzione temporale nettamente migliore.
+
+    ND-LAr avrà un volume attivo totale di 5×7×3 \unit{m^3} e una massa
+    fiduciale di 67 tonnellate, utilizzerà lo stesso nucleo bersaglio e le
+    stesse strategie di rivelazione del FD; ciò ridurrà la sensibilità agli
+    effetti nucleari e alle incertezze sistematiche legate al rivelatore
+    nell'estrazione del segnale di oscillazione presso il FD\@.
+    Lo schema di ND-LAr è illustrato in figura~\ref{fig:nd-lar}.
+
+    Il detector è più sensibile ai muoni con una quantità di moto inferiore a
+    $\sim$0,7~GeV\@.
+    Per risolvere questo problema, ND-LAr è integrato dal rivelatore
+    TMS/ND-GAr, per misurare la quantità di moto e la carica dei muoni,
+    dati critici per un'accurata determinazione dell'energia del neutrino.
 
 
 \end{document}
