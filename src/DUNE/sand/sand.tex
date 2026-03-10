@@ -3,5 +3,41 @@
 \begin{document}
 
 \section{SAND} \label{sec:sand}
+  SAND (\textit{System for on-Axis Neutrino Detection}) svolge diverse
+  funzioni, le principali delle quali sono il monitoraggio del fascio e la
+  validazione delle misure effettuate presso il sito del FD\@.
+  Infatti, alcune quantità importanti, come il flusso
+  di neutrini, risultano tra loro convolute ed è necessario procedere
+  all'\textit{unfolding} per poterle separare (\textit{disentangle}).
+
+  SAND opererà con neutrini in un ampio intervallo di energie
+  (0,5 GeV < $E_\nu$ < 10 GeV), pertanto i processi di interazione
+  tra neutrini e nuclei saranno molteplici: lo scattering quasi-elastico (QES),
+  le risonanze (RES) e lo scattering profondamente anelastico (DIS).
+
+  L'uso dell'argon nel ND (ND-LAr, ND-GAr, GRAIN) ha il vantaggio di
+  essere lo stesso bersaglio sfruttato nel FD e di consentire la raccolta di un
+  ampio campione di dati.
+  Questa scelta presenta tuttavia un principale svantaggio: come
+  bersaglio non è ideale per le misure di flusso, poiché essendo un nucleo
+  pesante introduce un significativo \textit{smearing} nucleare.
+  Come spiegato nella sottosezione
+  ~\ref{subsec:il-neutrino-nel-modello-standard}, gli effetti nucleari sono
+  dovuti al fatto che le particelle bersaglio della reazione si trovano
+  all'interno del nucleo; questi aggiungono uno \textit{smearing} causato
+  dall'interazione forte con i diversi nucleoni all'interno del nucleo stesso.\\
+  La soluzione implementata in SAND prevede l'utilizzo di nuclei
+  bersaglio più leggeri (C e H) nello \textit{Straw Tube Tracker};
+  ciò permette di studiare lo \textit{smearing} nucleare di diversi bersagli,
+  vincolando i modelli degli effetti nucleari, inoltre in questo modo SAND
+  sarà in grado di separare la risposta fisica, dovuta allo smearing del nucleo
+  bersaglio, da quella del rivelatore.\\
+  Di seguito sono presentati nel dettaglio i vari componenti di SAND\@.
+
+  \subfile{magnet.tex}
+
+  \subfile{ecal.tex}
+
+  \subfile{stt.tex}
 
 \end{document}

@@ -1,0 +1,78 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\subsection{Il tracciatore} \label{subsec:il-tracciatore-interno}
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=.5\textwidth]{DUNE/sand/stt-section}
+    \caption{
+      Schema di un modulo STT comprendente i tre elementi principali (
+      da sinistra a destra): un bersaglio di polipropilene \ce{CH2} regolabile,
+      un radiatore con 119 fogli di polipropilene per l'identificazione di
+      $\Pepm$ e quattro strati di \textit{straw} in configurazione XXYY (fascio
+      lungo l'asse z e campo B lungo l'asse x).
+      Alcuni dei fogli del radiatore sono sostituiti da sottili bersagli di
+      carbonio. \cite{abud2021deepundergroundneutrinoexperiment}
+    }
+    \label{fig:stt-section}
+  \end{figure}
+  Il tracciatore, che occupa la maggior parte del volume all'interno dell'ECAL,
+  ha due obiettivi primari: offrire un bersaglio per le interazioni di
+  (anti)neutrini e fornire un sistema di tracciamento in grado di ricostruire
+  accuratamente il momento di tutte le particelle cariche.
+  Per raggiungere questi obiettivi sono stati identificati alcuni
+  requisiti fisici fondamentali del tracciatore:
+  \begin{itemize}
+    \item avere una bassa densità e un alto campionamento delle tracce per
+    ridurre al minimo lo scattering multiplo e garantire così un'elevata
+    risoluzione spaziale e della quantità di moto;
+
+    \item avere uno spessore totale confrontabile con la lunghezza
+    di radiazione per minimizzare le interazioni secondarie;
+
+    \item essere in grado di ospitare diversi materiali bersaglio per
+    confrontare le interazioni dei neutrini su differenti nuclei all'interno
+    dello stesso rivelatore;
+
+    \item essere in grado di distinguere $\Pepm, \Ppipm, \PKpm, \Pproton$
+    e $\Pmupm$;
+
+    \item avere una massa fiduciale del bersaglio di $\sim$5 tonnellate per
+    garantire un tasso di interazione sufficiente.
+  \end{itemize}
+  Lo STT di SAND segue un design modulare; ogni modulo, il cui schema è
+  illustrato in figura ~\ref{fig:stt-section}, è equipaggiato con:
+  \begin{itemize}
+    \item uno strato di bersaglio passivo in carbonio o polipropilene con uno
+    spessore rispettivamente di 4~mm o 5~mm;
+
+    \item un radiatore composto da 105 fogli di polipropilene spessi
+    \SI{18}{\micro\meter}, alternati a intercapedini d'aria di
+    \SI{117}{\micro\meter} per separare $\Pepm$ da $\Ppipm$
+    tramite radiazione di transizione;
+
+    \item quattro strati di \textit{straw}, dove ogni cannuccia ha una lunghezza
+    di 3,2~m, un diametro di 5~mm, pareti in Mylar da \SI{12}{\micro\meter}
+    rivestite di alluminio e un filo di tungsteno da \SI{20}{\micro\meter}
+    rivestito di oro, opera con una miscela gassosa di \ce{Xe} e \ce{CO2}
+    (70/30) a 1,9~atm; due strati di straw sono disposti lungo l'asse X e gli
+    altri due lungo l'asse Y in una configurazione XXYY\@.
+  \end{itemize}
+  Gli strati del bersaglio e del radiatore costituiscono i bersagli principali
+  del rivelatore, al posto delle lastre bersaglio è possibile installare molti
+  materiali diversi come \ce{C}, \ce{Ca}, \ce{Fe} e \ce{Pb}.\\
+  La densità media del rivelatore può essere modulata tra un massimo di
+  \SI{0,18}{g/cm^3}, corrispondente allo spessore del radiatore e del
+  bersaglio, e un minimo di \SI{0,005}{g/cm^3} se sono presenti solo gli strati
+  di \textit{straw}.
+  Questa densità è mantenuta sufficientemente bassa per ottenere una lunghezza
+  totale del rivelatore confrontabile con una lunghezza di radiazione,
+  consentendo una misura accurata dei quadrimomenti delle particelle finali.\\
+  I bersagli passivi costituiscono fino al 97\% della massa totale del
+  rivelatore, mentre il restante 3\% è dovuto alla massa delle \textit{straw}.\\
+  Lo STT fornisce: una risoluzione spaziale del singolo punto inferiore ai
+  \SI{200}{\micro\meter}, una risoluzione dell'impulso di $\sim$3\% e una
+  risoluzione angolare di 2~mrad.
+
+\end{document}
