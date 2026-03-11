@@ -10,6 +10,43 @@
   Al momento della stesura di questa tesi fake-reco non implementa le seguenti
   funzionalità ma sono previste dalla \textit{roadmap}:
 
-  \paragraph{}
+  \paragraph{\textit{Smearing} della ricostruzione}
+    La prima miglioria da apportare allo stato attuale delle cose è aggiungere
+    uno \textit{smearing} ai dati inseriti nei campi della ricostruzione, così
+    da rendere più realistici i dati sui quali testare i \textit{workflow} di
+    analisi; con questa modifica il nome passa da fake-reco a fast-reco.
+
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=.95\textwidth]{fake-reco/fake-recov2}
+      \caption{
+        Schema di un \textit{workflow} che utilizza la fast-reco divisa in
+        moduli specifici per i singoli detector.
+      }
+      \label{fig:fake-recov2}
+    \end{figure}
+
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=.95\textwidth]{fake-reco/not-that-fake-reco}
+      \caption{
+        Schema di un \textit{workflow} di una possibile fase dello sviluppo che
+        affianca alcuni degli effettivi moduli di ricostruzione a quelli della
+        fast-reco per i detector che ancora non ne hanno uno.
+      }
+      \label{fig:not-that-fake-reco}
+    \end{figure}
+
+  \paragraph{fake-reco parziale}
+    L'ultimo step prima di abbandonare fast-reco in favore delle ricostruzioni
+    vere e proprie, schematizzato in figura~\ref{fig:fake-recov2}, consiste
+    nel dividerlo in quattro processi più piccoli: la traduzione della verità
+    Monte Carlo (non indicato come modulo nello schema) e tre moduli di
+    fast-reco ma specifici per ogni componente di SAND\@.
+    In questo modo i veri algoritmi di ricostruzione, che non saranno
+    portati a termine tutti contemporaneamente, potranno essere inseriti uno
+    alla volta, continuando ad avere in output degli oggetti completi; una
+    possibile fase intermedia di questo processo è schematizzata in
+    figura~\ref{fig:not-that-fake-reco}.
 
 \end{document}
