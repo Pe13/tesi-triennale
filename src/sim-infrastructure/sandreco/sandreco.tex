@@ -2,15 +2,31 @@
 
 \begin{document}
 
-\section{Sandreco} \label{sec:sandreco}
-  % TODO Aggiungere più dettagli su cosa era e cosa sarà
-  Sandreco attualmente è un progetto sviluppato utilizzando microFrameWork
-  (ufw), un framework creato principalmente dalla sezione del CNAF di Bologna.
+\section{SANDReco} \label{sec:sandreco}
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=.8\textwidth]{sim-infrastructure/sandreco}
+    \caption{
+      Schema della catena software di simulazione e ricostruzione di SAND
+    }
+    \label{fig:sandreco}
+  \end{figure}
+  SANDReco è il progetto che si occupa della digitizzazione e la ricostruzione
+  delle tracce di SAND, il cui schema generale, insieme alla catena di
+  simulazione è riportato in figura~\ref{fig:sandreco}.
+  Inizialmente, in una versione oggi denominata SANDReco-LEGACY era composto
+  da una serie di eseguibili a sé stanti che andavano compilati ed eseguiti
+  manualmente uno ad uno, la nuova versione invece, alla quale ci si riferisce
+  con il nome SANDReco-Experimental si appoggia a microFrameWork (ufw) un
+  framework creato principalmente dalla sezione del INFN di Bologna.
+  Questa soluzione permette di condividere le strutture dati tra i vari
+  algoritmi che si occupano dei diversi subdetector e di semplificare le
+  operazioni di \textit{build} ed esecuzione degli stessi in maniera corale.
 
   \subfile{ufw.tex}
 
-  \subsection{Sandreco} \label{subsec:sandreco}
-    Nell'ambito del ufw, sandreco ha adottato le seguenti convenzioni:
+  \subsection{SANDReco} \label{subsec:sandreco}
+    Nell'ambito del ufw, SANDReco ha adottato le seguenti convenzioni:
     \begin{itemize}
       \item Ogni \texttt{context\_id} corrisponde a uno spill;
       \item Le strutture dati contenute nel formato di output devono

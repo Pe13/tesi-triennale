@@ -6,27 +6,27 @@
   \label{ch:infrastruttura-di-simulazione-per-sand}
   \begin{figure}[ht]
     \centering
-    \includegraphics[width=.8\textwidth]{sim-infrastructure/sw-chain}
+    \includegraphics[width=.99\textwidth]{sim-infrastructure/nd-sim}
     \caption{
-      Schema della catena software di simulazione e ricostruzione di SAND
+      Schema della catena software di simulazione e ricostruzione del ND\@.
     }
-    \label{fig:sw-chain}
+    \label{fig:nd-sim}
   \end{figure}
-  L'infrastruttura software di simulazione per SAND, schematizzata in
-  figura~\ref{fig:sw-chain} è composta da quattro elementi principali:
+  La catena software di simulazione per SAND, che si
+  introduce all'interno della più ampia infrastruttura del ND schematizzata in
+  figura~\ref{fig:nd-sim}, è composta da quattro elementi principali:
   \begin{itemize}
     \item le interazioni dei neutrini con la materia sono generate da GENIE;
     \item le particelle scaturite dalle interazioni dei neutrini sono
     propagate da EDep-sim (un wrapper attorno a GEANT4);
-    \item la digitalizzazione e la ricostruzione del segnale sono
+    \item la digitizzazione e la ricostruzione delle tracce sono
     svolte da SAND-Reco;
     \item i risultati della ricostruzione di SAND, aggregati a quelli degli
     altri componenti del ND, sono memorizzati su dei file in
-    formato \textit{Common Analysis File} (CAF) dal ND\_CAFMaker
-    (non rappresentato in figura~\ref{fig:sw-chain}).
+    formato \textit{Common Analysis File} (CAF) dal ND\_CAFMaker.
   \end{itemize}
   In questo capitolo saranno presentati questi quattro strumenti, con un
-  particolare focus su sandreco.
+  particolare focus su SAND-Reco.
 
   \subfile{genie.tex}
 
