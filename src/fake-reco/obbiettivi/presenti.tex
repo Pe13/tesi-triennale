@@ -1,0 +1,34 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Obbiettivi attuali} \label{sec:obbiettivi-attuali}
+  %    - propedeuticità al riempimento dei caf con roba vera
+  %    - validazione input
+  %    - testare analisi dati su oggetti completi
+  Al momento della stesura di questa tesi fake-reco adempie ai seguenti
+  compiti:
+
+  \paragraph{Propedeuticità}
+    I CAF di DUNE sono delle strutture dati nuove e ancora in via di sviluppo
+    che i ricercatori devono imparare a usare, riempirli con la verità Monte
+    Carlo permette di studiarli a fondo ed eventualmente di individuare
+    storture nel loro design.
+
+  \paragraph{Validazione dell'input}
+    La maggior parte dei \textit{tool} di analisi dati sarà sviluppata in
+    maniera naturale per lavorare sui CAF; avere un layer di traduzione
+    uno a uno tra l'output di EDep-Sim e i CAF elimina la necessità di creare
+    strumenti appositi per i dati simulati e, nel malaugurato caso in cui
+    lo standard dei formati in ingresso dovessero cambiare, riduce lo
+    sforzo reimplementativo alla sola fake-reco.
+
+  \paragraph{Test degli strumenti di analisi}
+    Per poter testare i workflow di analisi dati è necessario avere i dati
+    su cui lavorare.
+    Delle strutture dati riempite con informazioni realistiche seppur troppo
+    perfette permettono di testare più a fondo gli strumenti di
+    analisi rispetto a strutture riempite con dati nulli o completamente
+    casuali.
+
+\end{document}

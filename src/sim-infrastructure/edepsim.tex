@@ -11,27 +11,15 @@
   geometria come quelli necessari a GENIE\@.
   Conoscendo la cinematica dell'evento e la geometria del rivelatore,
   EDep-sim propaga le particelle all'interno del materiale.\\
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{sim-infrastructure/input-structure}
+    \caption{Struttura del file di output di EDep-Sim}
+    \label{fig:input-structure}
+  \end{figure}
   Il risultato è restituito in output sotto forma di un file ROOT con la
-  seguente struttura~\cite{edepsim_output}:
-  \begin{itemize}
-    \item File ROOT
-    \begin{itemize}
-      \item DetSimPassThru: Folder (TDirectoryFile) con informazioni su input
-      \begin{itemize}
-        \item gRooTracker: TTree di input formato
-        rootracker~\cite[pag. 116]{Andreopoulos_2010}
-        \item
-        InputKinem: TTree con mappa tra eventi di input ed eventi simulati.
-        Per ogni evento simulato riporta a quale file di input (inputFileNum) ed
-        a quale evento (inputEntryNum) corrisponde
-        \item
-        InputFiles: Informazioni sui file di input (fileName, generatorName,
-        treeName, filePOT, fileEntries)
-      \end{itemize}
-      \item EDepSimGeometry: TGeoManager con geometria
-      \item EDepSimEvents: TTree con informazioni sulla simulazione degli eventi
-    \end{itemize}
-  \end{itemize}
+  struttura riportata i figura~\ref{fig:input-structure}
+  ~\cite{edepsim_output}.\\
   Gli oggetti di maggior interesse nell'ambito di questa tesi sono il
   \texttt{gRooTracker} che contiene l'output di GENIE e \texttt{EDepSimEvents}
   che invece contiene quello di EDep-sim.
