@@ -102,4 +102,20 @@
       (\texttt{TTree} e non), ma non è esclusivo dei dati di input o output
       (per quanto ciò sarà comune).
 
+  \subsubsection*{Gli streamer}
+    Gli streamer sono responsabili delle interfacce di input e output del
+    framework.
+    Per la precisione il ufw può creare o modificare un file in output solo
+    tramite uno streamer, mentre per quanto riguarda l'input c'è anche la
+    possibilità di usare i sopracitati dati contrassegnati dal tag Complex.
+
+    L'utente che dichiara uno streamer, oltre a implementare un metodo
+    \texttt{read} e/o un metodo \texttt{write} in base al tipo di interfaccia
+    che si vuole creare, è anche responsabile della creazione degli eventuali
+    dizionari ROOT o affini, necessari alle operazioni di I/O dei tipi che
+    intende gestire.\\
+    Per rappresentare uno streamer, una classe deve ereditare da
+    \texttt{ufw::streamer}.
+
+
 \end{document}

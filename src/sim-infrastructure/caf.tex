@@ -1,0 +1,23 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{\textit{Common Analysis File}} \label{sec:common-analysis-file}
+  I file di analisi per l'utente finale dell'esperimento DUNE sono mantenuti nel
+  formato CAF (\textit{Common Analysis File}).
+  I CAF sono file .root che contengono dei \texttt{TTree} basati su degli
+  oggetti di tipo \texttt{StandardRecord}.
+  Uno \texttt{StandardRecord} è concepito per essere un riassunto
+  sufficiente di un evento di neutrino per l'analisi di alto livello.
+
+  In quanto tali, essi riflettono le proprietà di oggetti ricostruiti di alto
+  livello (come tracce o sciami), oltre a informazioni sintetiche di verità
+  Monte Carlo (\textit{truth}), ma non includono informazioni sulla carica, sui
+  singoli \textit{hits} o dettagli temporali di basso livello e sono
+  progettati per consentire un'iterazione rapida nei \textit{workflow} di
+  analisi
+  I CAF sono pensati per avere una bassa barriera all'ingresso e
+  per essere facili da usare: gli unici requisiti per leggerli sono ROOT e
+  gli header che definiscono gli oggetti di tipo \texttt{StandardRecord}.
+
+\end{document}
