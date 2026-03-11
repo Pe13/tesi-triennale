@@ -1,0 +1,105 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\subsection{microFrameWork} \label{subsec:il-micro-framework}
+  microFrameWork è un framework \textit{object-oriented} minimale scritto
+  interamente in \CPP{}
+  che permette di creare dei \textit{workflow} di analisi dati scrivendo
+  delle configurazioni, sotto forma di file json, che descrivono come
+  concatenare moduli di input, output e elaborazione, implementati
+  anch'essi in \CPP.
+
+  Dati un insieme di \texttt{TTree} con lo stesso numero di entries contenuti
+  in uno o più file .root, il ufw è progettato per leggere da tutti ed
+  elaborare un indice alla volta, per poi scrivere nello stesso indice di
+  altri tree in uno o più file di output.
+  Ogni indice può essere processato in maniera indipendente dagli altri, ma
+  nonostante ciò attualmente il framework non permette di
+  elaborare più indici in parallelo.\\
+  Il termine tecnico per questi indici è \texttt{context\_id}.\\
+  Il ufw prevede anche la possibilità di leggere oggetti che non siano
+  \texttt{TTree}, ad esempio il \texttt{TGeoManager} citato nella
+  sezione~\ref{sec:edep-sim}, in questi casi sarà usato lo stesso oggetto
+  per ogni indice.
+
+  La natura \textit{object-oriented} del ufw è ravvisabile nel fatto che
+  ogni elemento che deve essere gestito da esso necessita di ereditare da
+  una classe virtuale definita nel ufw stesso.
+  Queste classi sono tre, una per ogni tipo di oggetto necessario al
+  framework: \texttt{ufw::process}, \texttt{ufw::data::base} e
+  \texttt{ufw::streamer}.
+
+  \subsubsection*{I processi}
+    I processi rappresentano gli step di elaborazione dati del
+    \textit{workflow} di analisi.
+    Quanto questi step debbano essere ``grandi'' è a discrezione
+    dell'utente ma la prassi vorrebbe che si trovi il giusto mezzo tra
+    l'avere un \textit{workflow} composto da un solo modulo e avere dei
+    moduli che eseguono poche righe di codice ognuno.
+
+    I processi possono accettare sia parametri di configurazione indicati
+    dall'utente nel json, sia dati provenienti da altri processi o
+    direttamente da file (approfondimento su questo punto in seguito) e
+    possono a loro volta ritornare dei dati in output.\\
+    Per creare un processo bisogna creare una classe che eredita da
+    \texttt{ufw::process}.
+
+  \subsubsection*{I dati}
+    Nel contesto del ufw con il termine dati ci si riferisce a tutti e i
+    soli oggetti ai quali possono accedere i vari moduli e streamer, la cui
+    \texttt{ownership} appartiene al framework.
+    Non rientrano sotto questa definizione, per esempio, tutte le variabili
+    create all'interno dei singoli moduli, che non devono categoricamente
+    essere passate ad altri oggetti del framework.
+
+    Per rappresentare un tipo di dato, una classe deve ereditare dalla
+    classe template \texttt{ufw::data::base<T1, T2, T3>}, dove i tre
+    parametri template, detti tag, servono a specificare alcune
+    caratteristiche del dato.
+
+    \paragraph{Tag 1: Managed vs Complex}
+      Questo tag specifica le modalità di I/O del tipo.\\
+      Per i dati contrassegnati come Managed l'I/O è gestito da uno
+      streamer, mentre per quelli Complex è richiesto all'utente che
+      li dichiara di creare anche una specializzazione del template
+      \texttt{ufw::data::factory<T>}
+      (dove \texttt{T} è la classe che si sta implementando) che sulla
+      base della configurazione indicata nel json andrà a costruire
+      un'istanza del tipo in questione assumendone la \texttt{ownership}.
+      Non è possibile usare i tipi dichiarati Complex come output del
+      \textit{workflow}.
+
+    \paragraph{Tag 2: Unique vs Instanced}
+      Questo tag specifica quante istanze del tipo in questione possono
+      essere create.\\
+      Come suggerito dal nome, un tipo contrassegnato come Unique ammette
+      una sola istanza, alla quale non è assegnato alcun nome, per farvi
+      riferimento nel file di configurazione basta indicare il tipo stesso,
+      i tipi Instanced al contrario ammettono più istanze, ognuna delle
+      quali, nel json, è identificata solo da un nome (non dal tipo).\\
+      Al momento della scrittura ci sono due precisazioni importanti da
+      tenere a mente:
+    \begin{itemize}
+      \item l'unicità dei tipi Unique non è garantita in alcun modo dal
+      framework;
+      \item i controlli sulla corrispondenza dei tipi richiesti dai moduli
+      e quelli forniti dal framework (sulla base della configurazione
+      json) sono effettuati solo a \textit{runtime} tramite dei
+      \texttt{dynamic\_cast}.
+      \end{itemize}
+
+    \paragraph{Tag 3: Global vs Context}
+      Questo tag specifica il \textit{life time} delle istanze di questo
+      tipo.\\
+      Le istanze dei tipi contrassegnati come Global vengono costruite al primo
+      \texttt{context\_id} e distrutte al termine dell'elaborazione
+      dell'ultimo, per quanto riguarda i tipi Context, come suggerisce il
+      nome, il loro \textit{life time} è legato a quello del
+      \texttt{context\_id}.\\
+      Questo tag è quello usato per distinguere i dati letti (scritti) dai
+      (nei) due tipi di oggetti che il ufw è in grado di gestire, discussi prima
+      (\texttt{TTree} e non), ma non è esclusivo dei dati di input o output
+      (per quanto ciò sarà comune).
+
+\end{document}
