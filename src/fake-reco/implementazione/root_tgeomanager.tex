@@ -1,0 +1,26 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\subsection*{\texttt{root\_tgeomanager}}
+  \texttt{root\_tgeomanager} è un dato Complex, Unique e Global,
+  il cui compito è esporre in modo sicuro la geometria del
+  rivelatore all'interno della simulazione.
+  Coerentemente con il fatto che rappresenta la struttura fisica del setup
+  sperimentale, la quale è chiaramente indipendente dall'evento o dallo spill
+  analizzato, è contrassegnato come Global.
+
+  Il costruttore della classe passa il percorso del file .root indicato nel
+  json a un metodo statico della classe \texttt{TGeoManager} che legge
+  il file e costruisce una propria istanza contente l'intera struttura
+  dei volumi e dei materiali.
+  Inoltre, la classe si assicura che esista una sola istanza della geometria
+  attiva durante l'esecuzione, prevenendo possibili conflitti legati
+  all'attuale fragilità del ufw menzionata nella
+  sottosezione~\ref{subsec:il-micro-framework}.
+
+  \texttt{root\_tgeomanager} espone una sottoclasse di \texttt{TGeoNavigator}
+  che ne estende le funzionalità, per utilizzare la geometria caricata.
+
+
+\end{document}
