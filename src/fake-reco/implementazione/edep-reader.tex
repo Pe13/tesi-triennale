@@ -3,6 +3,24 @@
 \begin{document}
 
 \subsection*{\texttt{edep\_reader}}
+  \texttt{edep\_reader} è un dato Complex, Unique e Context, il cui compito
+  è rappresentare le strutture dati contenute nel output di EDep-Sim.
 
+  In quanto Complex è responsabile del proprio input; passando un file .root
+  nel json di configurazione la sua \texttt{factory} lo apre e cerca un
+  \texttt{TTree} chiamato ``EDepSimEvents'', se lo trova controlla che
+  contenga un branch di tipo \texttt{TG4Event}, una struct \textit{data only}
+  di EDep-Sim contenente le informazioni di un singolo spill.
+
+  Per ogni \texttt{context\_id} \texttt{edep\_reader} espone due interfacce
+  equivalenti: la prima è un \texttt{const~TG4Event~*} per avere compatibilità
+  con eventuale codice preesistente che accede direttamente alle strutture dati
+  originali, la seconda invece è una struttura ad albero che riproduce la
+  gerarchia dell'interazione.
+  Questa nuova struttura dati originale di SANDReco è stata creata per
+  facilitare le iterazioni sulle particelle dato che nel formato
+  \texttt{TG4Event} sono salvate tutte in un unico \texttt{std::vector}
+  e i loro rapporti di parentela sono indicati con gli indici delle loro
+  posizioni nel vector stesso.
 
 \end{document}
