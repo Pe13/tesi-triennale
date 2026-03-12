@@ -12,8 +12,8 @@
   contenga un branch di tipo \texttt{TG4Event}, una struct \textit{data only}
   di EDep-Sim contenente le informazioni di un singolo spill.
 
-  Per ogni \texttt{context\_id} \texttt{edep\_reader} espone due interfacce
-  equivalenti: la prima è un \texttt{const~TG4Event~*} per avere compatibilità
+  Per ogni \texttt{context\_id} \texttt{edep\_reader} espone due interfacce:
+  la prima è un \texttt{const~TG4Event~*} per avere compatibilità
   con eventuale codice preesistente che accede direttamente alle strutture dati
   originali, la seconda invece è una struttura ad albero che riproduce la
   gerarchia dell'interazione.
@@ -22,5 +22,8 @@
   \texttt{TG4Event} sono salvate tutte in un unico \texttt{std::vector}
   e i loro rapporti di parentela sono indicati con gli indici delle loro
   posizioni nel vector stesso.
+  Inoltre durante la costruzione della struttura ad albero, utilizzando il
+  \texttt{root\_tgeomanager} per accedere alla geometria, vengono aggiunte
+  informazioni sui detector attraversati dalle varie tracce.
 
 \end{document}

@@ -6,6 +6,21 @@
   Il processo \texttt{fake-reco} attualmente non accetta alcun parametro di
   configurazione (quando sarà aggiunta la possibilità di applicare uno
   \textit{smearing} sarà introdotto un parametro contestuale), non richiede
-  alcun dato marcato come Instanced e ritorna un
+  alcun dato marcato come Instanced e ritorna un oggetto di tipo
+  \texttt{sand::caf::caf\_wrapper} che è Instanced
+  (\texttt{sand::caf::caf\_wrapper}, come indicato dal nome, è un
+  \textit{wrapper} attorno alla classe \texttt{StandardRecord} per poter
+  ereditare da \texttt{ufw::data::base} ed essere usato nel ufw).
+
+  Come già detto il suo scopo attualmente è scrivere la verità Monte Carlo nei
+  CAF, sia nei campi a lei destinati, sia in quelli che dovrebbero riportare
+  i risultati della ricostruzione.
+
+  Per la lettura dei dati in input \texttt{fake-reco} utilizza sia
+  \texttt{genie\_reader} che \texttt{edep\_reader} dato che entrambi hanno
+  informazioni esclusive l'uno rispetto all'altro; per esempio la maggior
+  parte delle informazioni sul neutrino primario si trovano unicamente su
+  genie mentre tutte le informazioni sul tempo o sulle particelle che non
+  sono figlie dirette del neutrino sono solo nei dati di EDep-Sim.
 
 \end{document}
