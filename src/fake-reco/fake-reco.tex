@@ -14,4 +14,25 @@
 
   \subfile{obbiettivi/futuri.tex}
 
+
+  \section{Funzionamento} \label{sec:funzionamento}
+    I lavori su fake-reco sono iniziati dopo il passaggio a
+    SADNReco-Experimental, quindi ne esiste un'unica implementazione
+    segue che le logiche del ufw.\\
+
+    Come illustrato i figura~\ref{fig:fake-reco-v0} fake-reco è implementato
+    nel ufw come processo, attualmente non accetta
+
+    \begin{listing}[ht]
+      \inputminted[
+        frame=lines, framesep=2mm, baselinestretch=1, fontsize=\footnotesize
+      ]{json}{fake-reco.json}
+      \caption{
+        json di configurazione di un \textit{workflow} che utilizza
+        fake-reco. N.B. il formato json non ammette commenti.
+      }
+      \label{lst:fake-reco}
+    \end{listing}
+
+
 \end{document}
