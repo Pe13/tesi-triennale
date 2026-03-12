@@ -1,0 +1,27 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\subsection*{\texttt{genie\_reader}}
+  \texttt{genie\_reader} è un dato Complex, Unique e Context, il cui compito
+  è rappresentare le strutture dati contenute nel output di GENIE in formato
+  rootracker.
+
+  In quanto Complex è responsabile del proprio input; passando un file .root
+  nel json di configurazione la sua \texttt{factory} lo apre e cerca un
+  \texttt{TTree} di nome ``gRooTracker'' nella cartella ``DetSimPassThru''
+  come previsto dalla specifica riportata in figura~\ref{fig:input-structure},
+  se il tree è presente viene controllata la versione del formato
+  rootracker~\cite[pag. 116]{Andreopoulos_2015} e in base a essa imposta per
+  la lettura i soli campi presenti.
+
+  Essendo \texttt{genie\_reader} marcato come Context deve rappresentare i
+  dati separati per spill, il formato rootracker però è solo una lista di
+  interazioni di neutrini senza alcun concetto di spill.
+  Per ovviare a questo problema la factory cerca nel file .root anche il
+  \texttt{TTree} ``EDepSimEvents'' che contiene l'output di EDep-Sim diviso
+  in spill, e crea una mappa: indice dello spill - range di indici nel
+  gRooTracker.
+
+
+\end{document}
