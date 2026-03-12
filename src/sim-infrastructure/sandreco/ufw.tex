@@ -61,12 +61,22 @@
     \paragraph{Tag 1: Managed vs Complex}
       Questo tag specifica le modalità di I/O del tipo.\\
       Per i dati contrassegnati come Managed l'I/O è gestito da uno
-      streamer, mentre per quelli Complex è richiesto all'utente che
-      li dichiara di creare anche una specializzazione del template
-      \texttt{ufw::data::factory<T>}
-      (dove \texttt{T} è la classe che si sta implementando) che sulla
-      base della configurazione indicata nel json andrà a costruire
-      un'istanza del tipo in questione assumendone la \texttt{ownership}.
+      streamer, mentre per quelli Complex ci sono due scenari possibili in
+      base al valore del terzo tag:
+    \begin{itemize}
+      \item Global: l'utente che dichiara il tipo deve implementare un
+      costruttore con la segnatura
+      \mintinline{cpp}{mycomplex(const ufw::config&)}.
+      La \texttt{ownership} delle istanze del tipo in questione appartiene
+      al framework;
+
+      \item Context: all'utente che dichiara il tipo è richiesto di creare
+      anche la specializzazione esplicita della classe template
+      \mintinline{cpp}{ufw::data::factory<mycomplex>} che sulla
+      base della configurazione indicata nel json andrà a leggere il file di
+      input e a costruire un'istanza del tipo in questione per ogni
+      \texttt{context\_id} elaborato, assumendone la \texttt{ownership}.
+      \end{itemize}
       Non è possibile usare i tipi dichiarati Complex come output del
       \textit{workflow}.
 
