@@ -1,0 +1,61 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\begin{listing}[ht]
+  \caption{
+    json di configurazione di un \textit{workflow} che utilizza
+    fake-reco. N.B. il formato json non ammette commenti.
+  }
+
+  \label{lst:fake-reco}
+  \begin{minted}[
+    frame=lines, framesep=2mm, baselinestretch=1, fontsize=\footnotesize
+  ]{json}
+{
+  "ufw": { // setup di microFrameWork
+    "ufw-loglevel": "debug",
+    "ufw-basepath": "/usr/local/share/sandreco/data",
+    "ufw-ldpath": ["/usr/local/lib64"],
+    "ufw-env": {}
+  },
+  "globals": { // variabili globali, uguali per tutti gli indici da processare
+    "sand::root_tgeomanager": {
+      "geometry": "test/sand-spills.5.edep.root"
+    }
+  },
+  "contexts": {
+    "keys": 2, // quali indici dei TTree in ingresso andare a elaborare;
+               // in questo caso i primi 2 (0 e 1)
+    "locals": { // variabili con tipi marcati come Unique
+      "sand::edep_reader": {
+        "uri": "test/sand-spills.5.edep.root"
+      },
+      "sand::genie_reader": {
+        "uri": "test/sand-spills.5.edep.root"
+      }
+    }
+  },
+  "run": [ // lista dei moduli da eseguire
+    {
+      "sand::fake_reco": {}, // tra le graffe andrebbe l'eventuale
+                             // configurazione del modulo come lo smearing
+      "reqs": {}, // qui andrebbero gli argomenti dei tipi marcati come Instanced
+      "prods": {
+        "output_caf": "produced_caf"
+      }
+    },
+    {
+      "sand::caf::caf_streamer": {
+        "uri": "test/output.caf.root",
+        "tree": "cafTree"
+      },
+      "write": ["produced_caf"]
+    }
+  ]
+}
+  \end{minted}
+
+\end{listing}
+
+\end{document}

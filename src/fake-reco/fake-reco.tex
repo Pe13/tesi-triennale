@@ -21,18 +21,10 @@
     segue che le logiche del ufw.\\
 
     Come illustrato i figura~\ref{fig:fake-reco-v0} fake-reco è implementato
-    nel ufw come processo, attualmente non accetta
+    nel ufw come processo e attualmente non accetta alcun parametro di
+    configurazione, quando sarà aggiunta la possibilità di applicare uno
+    \textit{smearing} sarà introdotto un parametro contestuale.\\
 
-    \begin{listing}[ht]
-      \inputminted[
-        frame=lines, framesep=2mm, baselinestretch=1, fontsize=\footnotesize
-      ]{json}{fake-reco.json}
-      \caption{
-        json di configurazione di un \textit{workflow} che utilizza
-        fake-reco. N.B. il formato json non ammette commenti.
-      }
-      \label{lst:fake-reco}
-    \end{listing}
-
+    \subfile{json.tex}
 
 \end{document}
