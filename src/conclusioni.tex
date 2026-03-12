@@ -1,0 +1,45 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Conclusioni} \label{ch:conclusioni}
+  Lo sviluppo dell'infrastruttura software
+  per il rivelatore SAND necessitava di strumenti in grado di testare le
+  pipeline di analisi ancor prima che i complessi algoritmi di ricostruzione
+  delle tracce fossero ultimati.
+  Inoltre, i file di output \textit{Common Analysis File} (CAF)
+  rappresentano delle strutture dati nuove per la
+  collaborazione e in via di sviluppo, che richiedevano un meccanismo di
+  popolamento affidabile per poterne studiare a fondo il design e
+  individuarne eventuali storture.
+
+  Per risolvere queste criticità, è stato sviluppato il modulo
+  fake-reco all'interno all'interno del nuovo microFrameWork (ufw):
+  un framework \textit{object-oriented} sviluppato ad hoc nell'ultimo anno
+  dalla sezione INFN di Bologna.
+  Insieme ad esso, sono state implementate interfacce specifiche
+  (\texttt{genie\_reader}, \texttt{edep\_reader}, \texttt{root\_tgeomanager})
+  per leggere la geometria del rivelatore e i formati di output dei generatori.
+  Il software creato funge da ponte: traduce le strutture dati di EDep-Sim e
+  GENIE copiando le informazioni della verità Monte Carlo direttamente negli
+  oggetti di ricostruzione finali previsti dai file CAF\@.
+
+  Grazie a questo lavoro, è ora disponibile un workflow operativo in grado
+  di generare file CAF strutturalmente completi.
+  Sebbene i dati nei campi di ricostruzione siano attualmente ``perfetti'' (in
+  quanto copie esatte della simulazione), essi offrono una base fondamentale per
+  permettere ai ricercatori di familiarizzare con i nuovi formati e per testare
+  a fondo i software di analisi dati.
+
+  La roadmap prevede l'evoluzione del modulo attuale in fast-reco,
+  introducendo un opportuno \textit{smearing} ai dati di ricostruzione per
+  simulare in modo più realistico la risposta del rivelatore e le incertezze di
+  misura.
+  Come passo successivo verso la ricostruzione completa, il modulo verrà poi
+  frammentato in processi più piccoli, dedicati ai singoli sottorivelatori di
+  SAND (ECAL, STT, GRAIN); questo accorgimento permetterà di sostituire
+  gradualmente i vari blocchi di fast-reco con i reali algoritmi di
+  ricostruzione non appena questi saranno disponibili, mantenendo l'intera
+  catena di analisi costantemente funzionante.
+
+\end{document}
