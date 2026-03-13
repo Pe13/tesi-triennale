@@ -6,13 +6,13 @@
   \addcontentsline{toc}{chapter}{Conclusioni}
   Lo sviluppo dell'infrastruttura software
   per il rivelatore SAND necessitava di strumenti in grado di testare le
-  pipeline di analisi ancor prima che i complessi algoritmi di ricostruzione
-  delle tracce fossero ultimati.
-  Inoltre, i file di output \textit{Common Analysis File} (CAF)
-  rappresentano delle strutture dati nuove per la
-  collaborazione e in via di sviluppo, che richiedevano un meccanismo di
+  \textit{pipeline} di analisi ancor prima che i complessi algoritmi di
+  ricostruzione delle tracce fossero ultimati.
+  Inoltre, il formato \textit{Common Analysis File} (CAF), usato per i file
+  di output, rappresenta delle strutture dati nuove per la
+  collaborazione e ancora in via di sviluppo, che richiedevano un meccanismo di
   popolamento affidabile per poterne studiare a fondo il design e
-  individuarne eventuali storture.
+  individuarne eventuali mancanze.
 
   Per risolvere queste criticità, è stato sviluppato il modulo
   fake-reco all'interno del nuovo microFrameWork (ufw):
@@ -25,14 +25,14 @@
   GENIE copiando le informazioni della verità Monte Carlo direttamente negli
   oggetti di ricostruzione finali previsti dai file CAF\@.
 
-  Grazie a questo lavoro, è ora disponibile un workflow operativo in grado
-  di generare file CAF strutturalmente completi.
+  Grazie a questo lavoro, è ora disponibile un \textit{workflow} operativo in
+  grado di generare file CAF strutturalmente completi.
   Sebbene i dati nei campi di ricostruzione siano attualmente ``perfetti'' (in
   quanto copie esatte della simulazione), essi offrono una base fondamentale per
   permettere ai ricercatori di familiarizzare con i nuovi formati e per testare
   a fondo i software di analisi dati.
 
-  La roadmap prevede l'evoluzione del modulo attuale in fast-reco,
+  La \textit{roadmap} prevede l'evoluzione del modulo attuale in fast-reco,
   introducendo un opportuno \textit{smearing} ai dati di ricostruzione per
   simulare in modo più realistico la risposta del rivelatore e le incertezze di
   misura.
