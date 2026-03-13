@@ -1,0 +1,28 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Validazione del modulo} \label{sec:validazione}
+  Per validare la correttezza del modulo realizzato, sono stati creati 19
+  spill simulando $\sim$$10^{14}$ POT (\textit{Proton On Target}) tramite la
+  pipeline di simulazione riportata in figura~\ref{fig:nd-sim} che sono poi
+  stati copiati in un CAF da fake-reco come mostrato nello schema in
+  figura~\ref{fig:fake-reco-v0}.
+  Graficando le componenti y e z dei vertici nel volume attivo di SAND contenuti nei campi della
+  ricostruzione si è ottenuto il grafico
+  riportato in figura~\ref{fig:plt-hit}.
+
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=.95\textwidth]{fake-reco/plot-hit}
+    \caption{
+      Grafico dei vertici di interazione in SAND di 19 spill generati da
+      $\sim$$10^{14}$ POT (\textit{Proton On Target}) contenuti nei campi
+      della ricostruzione in un file CAF\@.
+      I dati sono stati generati dalla catena di simulazione del
+      \textit{Near Detector} e copiati nel CAF con fake-reco.
+    }
+    \label{fig:plt-hit}
+  \end{figure}
+
+\end{document}
